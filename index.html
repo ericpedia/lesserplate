@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title></title>
+	  <title>{{Title}}</title>
 	  <meta name="robots" content="noindex, nofollow">
 	  <meta charset="utf-8">
 	</head>
 	<link rel="stylesheet/less" type="text/css" href="main.less">
 	<style type="text/less">
-		@color: #069;
+
+		/* Globals if you prefer to work this way */
+		@color: #444;
+		@background: hsla(45, 100%, 60%, 1);
+		@headerfont: 'Helvetica Neue', Helvetica, sans-serif;
+		@bodyfont: Georgia, serif;
 
 		@import "elements.less";
 
 		body {
 			padding: 1em;
 			font-size: 1.4em;
-			background: hsla(45, 100%, 60%, 1);
-			font-family: Georgia;
+			background: @background;
+			font-family: @bodyfont;
+			color: @color;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: @headerfont;
 		}
 
 		#main {
-			/*.drop-shadow(0, 1px, 2px, 0.2);*/
-			/*background: hsla(45, 100%, 90%, 1);;*/
 			width: 40em;
 			margin: 0 auto;
 			padding: 4em;
@@ -31,15 +39,16 @@
 <body>
 
 	<div id="main">
-		<h1>This is a heading</h1>
-		<p>This is some content</p>
+		<h1>{{Title}}</h1>
+		<p>This is some content.</p>
 	</div>
 
 	<script src="js/jquery.js"></script>
 	<script>jQuery(function($){
 
-		// $("h1").on('click', function(event){
-		// 	var $this = $(this);
+		// $("#example").on('click', function(event){
+		// 	var $el = $(this);
+		// 	event.preventDefault();
 		// });
 
 	});</script>
